@@ -1,0 +1,141 @@
+//
+//  PrefixHeader.pch
+//  Elegent Diary
+//
+//  Created by lwhldy on 2017/8/21.
+//  Copyright © 2017年 lwhldy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//引用
+
+#import "UIView+Frame.h"
+#import "UIColor+Color.h"
+#import "UIImage+image.h"
+#import "NSObject+MBProgressHUD.h"
+#import "NSObject+CurrentController.h"
+#import "NSString+RectString.h"
+#import <BlocksKit+UIKit.h>
+#import <Masonry.h>
+#import "CGHUD.h"
+
+//保存用户
+
+#define kUserId @"UserId"
+#define kUserToken @"UserToken"
+
+//保存其他
+#define kDraftKey @"DraftKey"
+#define kDateKey @"DateKey"
+
+//返回码
+#define kErrorcodeKey @"errorcode"
+
+#define kGetColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+
+// weak self
+#define kWeakSelf __weak __typeof(self) weakSelf = self;
+#define kStrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
+
+//自定义Log
+#ifdef DEBUG
+
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+#else
+#define MyLog(...)
+#endif
+//Rect Size Point宏
+#ifdef DEBUG
+#define NSLogRect(rect) NSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h:%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+#define NSLogSize(size) NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
+#define NSLogPoint(point) NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
+#endif
+//常用变量
+
+#define kLocalString(str) NSLocalizedString(str, nil)
+
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+
+#define kIsSuccessCode(dic) [[dic objectForKey:kErrorcodeKey] integerValue] == 0 ? YES : NO
+#define kShowSimpleMessage(dic) [self showSimpleMessage:[dic objectForKey:@"error"]];
+#define kShowError(error) [self showSimpleMessage:[NSString tipFromError:error]]
+
+
+#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
+//颜色
+#define kNaviBarColor [UIColor colorWithHexString:@"386da4"]
+#define kLoadingImage [UIImage imageWithColor:[UIColor colorWithHexString:@"e5e5e5"]]
+#define kTeenDesignColor [UIColor colorWithHexString:@"f8618e"]
+#define kCellNormalColor [UIColor colorWithHexString:@"f7f6f2"]
+#define kGrayColor [UIColor colorWithHexString:@"f1f6f7"]
+
+#define k3Color [UIColor colorWithHexString:@"333333"]
+#define k4Color [UIColor colorWithHexString:@"444444"]
+#define k5Color [UIColor colorWithHexString:@"555555"]
+#define k6Color [UIColor colorWithHexString:@"666666"]
+#define k7Color [UIColor colorWithHexString:@"777777"]
+#define k8Color [UIColor colorWithHexString:@"888888"]
+#define k9Color [UIColor colorWithHexString:@"999999"]
+#define kCeColor [UIColor colorWithHexString:@"cecece"]
+#define kAfColor [UIColor colorWithHexString:@"afafaf"]
+#define kD5Color [UIColor colorWithHexString:@"d5d5d5"]
+#define kBfColor [UIColor colorWithHexString:@"bfbfbf"]
+#define k9dColor [UIColor colorWithHexString:@"9d9d9d"]
+#define k575654Color [UIColor colorWithHexString:@"575654"]
+
+#define kTitleColor [UIColor colorWithHexString:@"ffffff"]
+
+
+// 屏幕宽度/高度
+#define kScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
+#define kScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
+#define kBannerHeight 164.0
+#define kSelectedOutfitHeight 186 + kGetHeight(39)
+#define kSelectedMakeupHeight 210 + kGetHeight(39)
+#define kOutfitCellHeight 186.0
+#define kMakeupCellHeight 210.0
+//化妆
+#define kCosmesHeight kGetHeight(120.0)
+#define kStepHeight(str) ([NSString getTextSizeHeight:str UIFont:16 Width:kScreenWidth/2.0] < 120 ? 158 : [NSString getTextSizeHeight:str UIFont:16 Width:kScreenWidth/2.0] + 30)
+#define kHeaderImgHeight 355.0
+#define kCompareHeight 190.0
+#define kKeywordHeight(str) ([NSString getTextSizeHeight:str UIFont:16 Width:kScreenWidth - 100] + 120)
+//内容页高度
+#define kContentHeight kScreenHeight - 64
+//内容页y
+#define kContentY 64.0
+//上传按钮高度
+#define kUploadBtnH 66.0
+
+// 字符串
+#define kIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || str == NULL || [str length]<1 ? YES : NO)
+#define kStringAIsEqualToStringB(A, B) [A isEqualToString:B]
+
+// 判定系统版本。
+#define IOS7orLater ([[UIDevice currentDevice].systemVersion doubleValue]>=7.0f) ? (YES):(NO)
+#define IOS8orLater ([[UIDevice currentDevice].systemVersion doubleValue]>=8.0f) ? (YES):(NO)
+#define IOS9orLater ([[UIDevice currentDevice].systemVersion doubleValue]>=9.0f) ? (YES):(NO)
+#define kHigher_iOS_9_0 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_0)
+
+// 设计稿以6S屏幕为基础
+#define CurrentMode  [UIScreen instancesRespondToSelector:@selector(currentMode)]
+#define iPhone4 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 960),  [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6p (CurrentMode ? CGSizeEqualToSize(CGSizeMake(1242, 2208),[[UIScreen mainScreen] currentMode].size) : NO)
+#define kGetWidth(width)   (iPhone6 ? (width)  : ((width) *kScreenWidth/375) )
+#define kGetHeight(height) (iPhone6 ? (height) : ((height)*kScreenHeight/667))
+#define kFontSize(f) (iPhone6 ? f : f*((kScreenHeight - 64 - 49) / 554.0) )
+#define kTextFontSizeCoefficient     ((ScreenHeight - 64 - 49) / 554.0)
+#define kGetFontSize(f) [UIFont systemFontOfSize:kTextFontSizeCoefficient*f];
+
+
+#endif /* PrefixHeader_pch */

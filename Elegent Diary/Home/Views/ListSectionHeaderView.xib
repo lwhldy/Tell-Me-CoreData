@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ListSectionHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="39"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKb-sk-NUP">
+                    <rect key="frame" x="20" y="19" width="15" height="12"/>
+                    <color key="backgroundColor" red="0.27280098200000003" green="0.42386725539999998" blue="0.62752574679999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="4mk-VX-YCb"/>
+                        <constraint firstAttribute="width" constant="15" id="7wP-KS-G8A"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-Hl-FIJ">
+                    <rect key="frame" x="15" y="8" width="14" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="zN1-Xc-Vbr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BaL-Hl-FIJ" firstAttribute="bottom" secondItem="HKb-sk-NUP" secondAttribute="bottom" constant="-2" id="5eU-rG-9aM"/>
+                <constraint firstAttribute="bottom" secondItem="HKb-sk-NUP" secondAttribute="bottom" constant="8" id="DCr-9k-62t"/>
+                <constraint firstItem="BaL-Hl-FIJ" firstAttribute="trailing" secondItem="HKb-sk-NUP" secondAttribute="trailing" constant="-6" id="KVK-9v-ODO"/>
+                <constraint firstItem="HKb-sk-NUP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="aCH-Xx-0i6"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="monthLabel" destination="BaL-Hl-FIJ" id="UkP-kO-xZI"/>
+            </connections>
+            <point key="canvasLocation" x="8.5" y="-270.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
+            <connections>
+                <outlet property="dateLabel" destination="PKU-fb-ycW" id="xdX-NG-5kI"/>
+                <outlet property="smellImageView" destination="Im7-12-lE6" id="Jyb-Od-xpr"/>
+                <outlet property="textView" destination="76c-Jo-Vfo" id="Fqa-mD-mRv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-fb-ycW">
+                    <rect key="frame" x="20" y="20" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.56476503609999995" green="0.5647650957" blue="0.56476503609999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="76c-Jo-Vfo" customClass="PanTextView">
+                    <rect key="frame" x="16" y="45" width="343" height="552"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smell_normal.PNG" highlightedImage="smell_laugh.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Im7-12-lE6">
+                    <rect key="frame" x="20" y="605" width="75" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="Cj0-rg-Oxj"/>
+                        <constraint firstAttribute="width" constant="75" id="fBC-Ju-Pmj"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Im7-12-lE6" secondAttribute="bottom" constant="20" id="1X9-jK-9rW"/>
+                <constraint firstItem="PKU-fb-ycW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="2h2-95-rV4"/>
+                <constraint firstItem="Im7-12-lE6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4m6-4C-nTl"/>
+                <constraint firstAttribute="trailing" secondItem="76c-Jo-Vfo" secondAttribute="trailing" constant="16" id="CM9-Yh-0YS"/>
+                <constraint firstItem="PKU-fb-ycW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="dJb-Ty-NsA"/>
+                <constraint firstItem="Im7-12-lE6" firstAttribute="top" secondItem="76c-Jo-Vfo" secondAttribute="bottom" constant="8" id="iCN-d8-ZVj"/>
+                <constraint firstItem="76c-Jo-Vfo" firstAttribute="top" secondItem="PKU-fb-ycW" secondAttribute="bottom" constant="8" id="rVH-gv-o3f"/>
+                <constraint firstItem="76c-Jo-Vfo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="zl1-GS-Lsk"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="smell_laugh.PNG" width="400" height="230"/>
+        <image name="smell_normal.PNG" width="400" height="230"/>
+    </resources>
+</document>
